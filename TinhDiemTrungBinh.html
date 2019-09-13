@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<form>
+    <label>Vật Lý</label>
+    <input id = "diemLy" type = "number" />
+    <label>Hóa Học</label>
+    <input id = "diemHoa" type = "number" />
+    <label>Sinh Học</label>
+    <input id = "diemSinh" type = "number" />
+    <input type = "button" onclick = "diemTb()" value = "Điểm Trung Bình"/>
+    <input type = "button" onclick = "diemTong()" value = "Tổng Điểm Ba Môn"/>
+
+</form>
+<script>
+    let diemLy = document.getElementById("diemLy");
+    let diemHoa = document.getElementById("diemHoa");
+    let diemSinh = document.getElementById("diemSinh");
+
+    function diemTb(){
+        alert((diemHoa.value*1 + diemLy.value*1 + diemSinh.value*1)/3);
+    }
+    function diemTong(){
+        alert(diemHoa.value*1 + diemLy.value*1 + diemSinh.value*1);
+    }
+
+</script>
+</body>
+</html>

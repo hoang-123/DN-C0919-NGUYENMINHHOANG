@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<form>
+    <label>Caculater</label>
+    <input id = "sothu1" type = "number"/>
+    <input id = "sothu2" type = "number"/> <br>
+    <input type = "button" onclick = "add()" value="Addition(+)"/>
+    <input type = "button" onclick = "sub()" value="Subtraction(-)"/>
+    <input type = "button" onclick = "mul()" value="Multiplication(x)"/>
+    <input type = "button" onclick = "div()" value="Division(/)"/>
+
+</form>
+<script>
+let sothu1 = document.getElementById("sothu1");
+let sothu2 = document.getElementById("sothu2");
+function add(){
+    alert(sothu1.value*1 + sothu2.value*1);
+}
+function sub() {
+    alert(sothu1.value * 1 - sothu2.value * 1);
+}
+    function mul() {
+        alert(sothu1.value * sothu2.value);
+    }
+        function div() {
+            alert(sothu1.value / sothu2.value);
+        }
+
+</script>
+</body>
+</html>

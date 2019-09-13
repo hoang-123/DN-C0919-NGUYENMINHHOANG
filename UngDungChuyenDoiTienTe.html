@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<form>
+    <label>Amount</label>
+    <input id = "amount" type = "number"/>
+   <select id="choose1">
+       <option value="1">VietNam</option>
+       <option value="2">USD</option>
+   </select>
+    <select id="choose2">
+        <option value="1">VietNam</option>
+        <option value="2">USD</option>
+    </select>
+
+    <input type = "button" onclick = "change()" value="Convert"/>
+
+</form>
+<script>
+    let amount = document.getElementById("amount");
+    function change(){
+        if(choose1.value==1 && choose2.value==2){
+            alert(amount.value/23000);
+        }else if(choose1.value==2 && choose2.value==1){
+            alert(amount.value*23000);
+        }else{
+            alert(amount.value);
+        }
+    }
+
+</script>
+
+</body>
+</html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<form>
+    <label>Nhập Bán kính</label>
+    <input id = "banKinh" type = "number" />
+    <input type = "button" onclick = "chuVi()" value = "Chu Vi"/>
+    <input type = "button" onclick = "dienTich()" value = "Dien Tich"/>
+
+</form>
+<script>
+    let banKinh = document.getElementById("banKinh");
+    let PI = 3.14159;
+    function chuVi(){
+        alert(banKinh.value * 2 * PI);
+    }
+    function dienTich(){
+        alert(banKinh.value * PI * banKinh);
+    }
+
+</script>
+
+</body>
+</html>
