@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<form>
+    <label>Enter a mounth</label><br>
+    <input id = "mounth" type = "text" />
+    <input type = "button" onclick = "tinh()" value = "Tính Số Ngày"/><br>
+    <input id = "mess" disabled type = "text" value = "" />
+</form>
+<script>
+    let mounth = document.getElementById("mounth");
+    let mess = document.getElementById("mess");
+    function tinh(){
+    switch (mounth.value*1){
+        case 2:
+            mess.value = "tháng 2 có 28 hoặc 29 ngày";
+            break;
+        case 4:
+        case 6:
+        case 9:
+        case 11:
+            mess.value ="tháng" + mounth.value + "có 30 ngày";
+            break;
+        default:
+            if(mounth.value*1 >= 1 && mounth.value*1 <= 12 ) {
+                mess.value ="tháng" + mounth.value + "có 31 ngày";
+            }else mess.value ="đây không phải là tháng của năm";
+}
+}
+</script>
+
+</body>
+</html>

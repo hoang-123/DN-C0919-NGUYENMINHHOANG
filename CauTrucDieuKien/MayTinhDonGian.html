@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<table style="width:12% " >
+    <tr><input type="text" id="insert" value=""/></tr>
+    <tr>
+        <th><input value="1" type="button" id="1" onclick="getNum(this.id)" /></th>
+        <th><input value="2" type="button" id="2"onclick="getNum(this.id)"/></th>
+        <th><input value="3" type="button" id="3"onclick="getNum(this.id)"/></th>
+        <th><input value="+" type="button" id="sum"onclick="getNum(this.id)"/></th>
+    </tr>
+    <tr>
+        <th><input value="4" type="button" id="4"onclick="getNum(this.id)" /></th>
+        <th><input value="5" type="button" id ="5"onclick="getNum(this.id)"/></th>
+        <th><input value="6" type="button" id="6"onclick="getNum(this.id)"/></th>
+        <th><input value="-" type="button" id="sub"onclick="getNum(this.id)"/></th>
+    </tr>
+    <tr>
+        <th><input value="7" type="button" id="7"onclick="getNum(this.id)"/></th>
+        <th><input value="8" type="button" id="8"onclick="getNum(this.id)"/></th>
+        <th><input value="9" type="button" id="9"onclick="getNum(this.id)"/></th>
+        <th><input value="*" type="button" id="nhan"onclick="getNum(this.id)"/></th>
+    </tr>
+    <tr>
+        <th><input value="C" type="button" id="delete"onclick="xoa()"/></th>
+        <th><input value="0" type="button" id="0"onclick="getNum(this.id)"/></th>
+        <th><input value="=" type="button" id ="kq" onclick="ketQua()"/></th>
+        <th><input value="/" type="button" id="div"onclick="getNum(this.id)"/></th>
+    </tr>
+</table>
+<script>
+    let kg;
+    function getNum(e) {
+        let num= document.getElementById(e);
+        let m =document.getElementById("insert");
+        m.value = m.value + num.value;
+    }
+    function xoa() {
+        let a=document.getElementById("insert");
+        a.value="";
+    }
+    function ketQua() {
+        let a=document.getElementById("insert");
+        a.value=eval(a.value);
+    }
+</script>
+</body>
+</html>
