@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<form>
+<label>Add New Product</label> <br>
+<input type = "text" id = "product"/>
+<input type = "button" onclick = "add()" value = "Add"/> <br>
+</form>
+<p id = "display"></p>
+
+<script>
+    let result = "" ;
+    let productName = ["Sony Xperia", "Samsung Galaxy", "Nokia 6", "Xaomi Red 4", "Iphone 6s", "Iphone 8phus", "Oppo A7"];
+
+    function show() {
+        result ="<table border='1' cellpadding='0' cellspacing='1'>" ;
+        for(let i=0; i<productName.length; i++){
+            result = "<tr>" + result +
+                "<td>" + productName[i] + "</td>" +
+                    "<td><input type = 'button' onclick = 'edit("+i+")' value = 'Edit' /></td>" +
+                         "<td><input type = 'button' onclick = 'del("+i+")' value = 'Delete' /></td>" + "</tr>";
+        } return  result+"</table>";
+    }
+    function add(){
+        let name= document.getElementById("product");
+        productName.push(name.value);
+        document.getElementById("display").innerHTML=show(productName);
+    }
+
+    function del(id){
+        productName.splice(parseInt(id), 1);
+        document.getElementById("display").innerHTML=show(productName);
+    }
+    function edit(id){
+        let name = prompt("Enter new name:");
+        productName[parseInt(id)] = name;
+        document.getElementById("display").innerHTML=show(productName);
+    }
+
+    document.getElementById("display").innerHTML=show(productName);
+
+
+</script>
+
+
+</body>
+</html>

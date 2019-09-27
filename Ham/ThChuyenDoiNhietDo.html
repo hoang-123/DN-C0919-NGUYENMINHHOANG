@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+Fahrenheit <input type = "text" id = "input" oninput = "chuyendoi()"/> <br> Celcius: <span id = "result"></span>
+<script>
+    function nhietDo(doF){
+        var result = (doF - 32)/1.8;
+        return result;
+    }
+    function chuyendoi(){
+        var input = document.getElementById("input").value;
+        var result = nhietDo(input);
+        document.getElementById("result").innerHTML = result;
+    }
+</script>
+</body>
+</html>

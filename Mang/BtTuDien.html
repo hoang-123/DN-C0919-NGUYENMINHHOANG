@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<input type = "text" id = "tu" />
+<input type = "button" onclick = "seach()" value = "seach"/>
+<span id = "kq"></span>
+<script>
+    let eng = ["dog", "cat", "pig", "birth", "fish", "mouse"];
+    let vie = ["chó", "mèo", "heo", "chim", "cá", "chuột"];
+    function seach(){
+        let tu = document.getElementById("tu");
+        for(let i = 0; i < eng.length; i++){
+            if(eng[i]===tu.value){
+                document.getElementById("kq").innerHTML = vie[i];
+               break;
+            }
+            else{
+                document.getElementById("kq").innerHTML = "try again";
+            }
+        }
+    }
+
+
+</script>
+
+</body>
+</html>

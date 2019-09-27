@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+function checkSNT(num){
+    for(let i = 2; i < num; i++){
+        if(num % i === 0){
+            return;
+        }
+    } return true;
+}
+let num = parseInt(prompt("Enter a number:"));
+if(checkSNT(num)){
+    alert("Đây là số nguyên tố");
+} else{
+    alert("Đay ko phải là số nguyên tố");
+}
+
+
+
+</script>
+
+</body>
+</html>

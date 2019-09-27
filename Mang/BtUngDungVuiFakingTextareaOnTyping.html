@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<input id = "textInput" type = "text" onkeydown="runProgram(event)"/>
+<script>
+    let textInput = document.getElementById("textInput");
+    let str = "Nguyen Minh Hoang";
+    let index = 0;
+    let result ="";
+    textInput.focus();
+    function runProgram(event) {
+        if(event.which ===8){
+            if(index>0){
+                result= textInput.value ;
+                textInput.value = result.substring(0, index-1);
+                index--;
+            }
+            event.preventDefault();
+        }else{
+            event.preventDefault();
+            result += str.charAt(index);
+            textInput.value = result;
+            index++;
+            if(index === str.length){
+                textInput.style.color = 'red';
+                alert("end");
+            }
+        }
+    }
+
+
+
+
+
+
+</script>
+
+</body>
+</html>
