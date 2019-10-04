@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<label>Validate Class</label><br>
+<input type="text" id="lop"/>
+<input type="button" onclick="test()" value="Check"/>
+<body>
+<script>
+    var lop = document.getElementById("lop");
+    lop.focus();
+    var pattName = /^[CAP]+[\d]{4}[GHIKLM]$/;
+    function test(){
+        alert(pattName.test(lop.value));
+    }
+
+</script>
+
+</body>
+</html>

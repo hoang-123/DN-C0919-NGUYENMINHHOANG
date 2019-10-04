@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<label>SwitchButton</label>
+<input type ="button" onclick="connectLamp()" value="ConnectToLamp" />
+<input type ="button" onclick="chooseOn()" value="ON" />
+<input type ="button" onclick="chooseOff()" value="OFF"/><br>
+<label>ElectricLamp</label>
+<input id = "lamp" type = "text" placeholder="status"/>
+
+<script>
+    var SwitchButton = function () {
+
+        this.swichOn = function () {
+           return "is on";
+        }
+        this.swichOff = function () {
+            return "is off";
+        }
+
+        this.setStatus = function (status) {
+            this.status = status;
+        }
+        this.getStatus = function () {
+           return this.status;
+        }
+
+
+    };
+    var Lamp = function () {
+        this.setStatus = function (status) {
+            this.status = status;
+        }
+        this.getStatus = function () {
+            return this.status;
+        }
+        this.swichOn = function () {
+            return "is on";
+        }
+        this.swichOff = function () {
+            return "is off";
+        }
+    };
+
+    var swichButton = new SwitchButton();
+
+    var lamp = new Lamp();
+
+    function connectLamp() {
+        swichButton.setStatus(true);
+        lamp.setStatus(true);
+        document.getElementById("lamp").value ="Đã kết nối";
+        }
+    function chooseOn() {
+        if(lamp.status===true|| swichButton.status===true)
+        document.getElementById("lamp").value= swichButton.swichOn();
+        else
+            document.getElementById("lamp").value =lamp.swichOn();
+    }
+    function chooseOff() {
+        swichButton.status=false;
+        lamp.status=false;
+        document.getElementById("lamp").value =lamp.swichOff();
+    }
+
+
+
+
+</script>
+
+</body>
+</html>

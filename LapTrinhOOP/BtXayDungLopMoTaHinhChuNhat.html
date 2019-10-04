@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <input id = "txtdai" type="text" placeholder="Chiều Dài" />
+    <input id = "txtrong" type="text" placeholder="Chiều Rộng"/>
+    <input type="button" id="btnSubmit" onclick = "tinhToan()" value="Ket Qua"/>
+    <p id = "result" ></p>
+    <canvas id="myCanvas" width="300" height="150"></canvas>
+
+<script>
+
+    let HCN = function(){
+        this.setchieuDai = function (chieuDai) {
+            this.chieuDai = chieuDai;
+        };
+        this.getchieuDai = function () {
+            return this.chieuDai;
+        };
+        this.setchieuRong = function (chieuRong) {
+            this.chieuRong = chieuRong;
+        };
+        this.getchieuRong = function () {
+            return this.chieuRong;
+        };
+        this.chuVi = function () {
+            return (this.chieuDai+this.chieuRong)*2;
+        };
+        this.dienTich = function () {
+            return this.chieuRong*this.chieuDai;
+        }
+    };
+    let chieuDai = document.getElementById("txtdai");
+    let chieuRong = document.getElementById("txtrong");
+    chieuDai.focus();
+    let result = "";
+    let c = "";
+    function tinhToan() {
+        let hinhChuNhat = new HCN();
+        hinhChuNhat.setchieuDai(chieuDai.value * 1);
+        hinhChuNhat.setchieuRong(chieuRong.value * 1);
+        result = "Chu vi:" + hinhChuNhat.chuVi() + "<br>Diện tích: " + hinhChuNhat.dienTich();
+        document.getElementById("result").innerHTML = result;
+        c = document.getElementById("myCanvas");
+        let ctx = c.getContext("2d");
+        ctx.strokeRect(20, 20, chieuDai.value, chieuRong.value);
+    }
+
+
+
+
+
+
+
+</script>
+
+</body>
+</html>

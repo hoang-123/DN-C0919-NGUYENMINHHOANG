@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<label>Validate Class</label><br>
+<input type="text" id="sdt"/>
+<input type="button" onclick="test()" value="Check"/>
+<body>
+<script>
+    var sdt = document.getElementById("email");
+    sdt.focus();
+    var pattName = /^(84)[-][0][\d]{9}$/;
+    function test(){
+        alert(pattName.test(sdt.value));
+    }
+
+</script>
+
+</body>
+</html>

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<label>Validate Email</label><br>
+<input type="text" id="email"/>
+<input type="button" onclick="test()" value="Check"/>
+<body>
+<script>
+    var email = document.getElementById("email");
+    email.focus();
+    var pattName = /^[A-Za-z0-9]+[A-Za-z0-9]*@[A-Za-z0-9]+(\.[A-Za-z0-9]+)$/;
+    function test(){
+        alert(pattName.test(email.value));
+    }
+
+</script>
+
+</body>
+</html>
