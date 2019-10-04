@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let arrListCustomer = [];
+    let checkEditCustomer = false;
+    let checkDeleteCustomer = false;
+    function dislayMainManu(){
+        let choose = prompt(
+            "1.Add new customer." +
+            "\n2.Display information customer." +
+            "\n3.Edit information customer." +
+            "\n4.Delete customer."+
+            "\n5.Exit."
+        );
+        switch(choose){
+            case "1":
+                addNewCustomer();
+                break;
+            case "2":
+                displayCustomer();
+                break;
+            case "3":
+                chooseCustomer();
+                break;
+            case "4":
+                chooseDeleteCustomer();
+                break;
+            case "5":
+
+                break;
+            default:
+                alert("Fail !!!");
+        }
+    };
+    function addNewCustomer() {
+        let arrInfor = [];
+        let nameCustomer = prompt("enter name customer: ");
+        let idCard = prompt("enter id cad customer: ");
+        let birthdayCustomer = prompt("enter birthday customer (dd/mm/yy):");
+        let emailCustomer = prompt("enter mail customer:");
+        let adressCustomer = prompt("enter adress customer:");
+        let typeCustomer = prompt("enter type of customer:");
+        let disscount = prompt("enter disscount:");
+        let numberOfAccompanying = prompt(" enter number of companying:");
+        let typeRoom = prompt(" enter type room:");
+        let renDays = prompt("enter ren days:");
+        let typeService = prompt("enter type service:");
+        arrInfor.push(nameCustomer);
+        arrInfor.push(idCard);
+        arrInfor.push(birthdayCustomer);
+        arrInfor.push(emailCustomer);
+        arrInfor.push(adressCustomer);
+        arrInfor.push(typeCustomer);
+        arrInfor.push(disscount);
+        arrInfor.push(numberOfAccompanying);
+        arrInfor.push(typeRoom);
+        arrInfor.push(renDays);
+        arrInfor.push(typeService);
+        arrListCustomer.push(arrInfor);
+        dislayMainManu();
+    }
+    function displayCustomer() {
+        let result = "";
+        for(var i=0; i< arrListCustomer.length;i++){
+            result += "\n" + (i+1) + "." + "Name: " + arrListCustomer[i][0] +
+                    "; Id Card:" + arrListCustomer[i][1];
+        }
+        result += "\n" + (arrListCustomer.length + 1) + ".Back to menu";
+        let chooseDisplayInfor = prompt(result);
+        if(chooseDisplayInfor.toString() !== (arrListCustomer.length+1).toString()){
+            if(!checkDeleteCustomer) {
+                displayInformationCustomer(Number.parseInt(chooseDisplayInfor) - 1);
+            }else{
+                deleteCustomer(Number.parseInt(chooseDisplayInfor) - 1);
+            }
+
+        }else {
+            checkDeleteCustomer = false;
+            checkEditCustomer = false;
+            dislayMainManu();
+        }
+    }
+    function displayInformationCustomer(index) {
+        if (checkEditCustomer) {
+            let chooseInforEdit = prompt(
+                "1.Name: " + arrListCustomer[index][0] +
+                "\n2.Id Card: " + arrListCustomer[index][1] +
+                "\n3.Birthday: " + arrListCustomer[index][2] +
+                "\n4.Email: " + arrListCustomer[index][3] +
+                "\n5.Address: " + arrListCustomer[index][4] +
+                "\n6.Type Customer: " + arrListCustomer[index][5] +
+                "\n7.Discount: " + arrListCustomer[index][6] +
+                "\n8.Accompanying: " + arrListCustomer[index][7] +
+                "\n9.Type Room: " + arrListCustomer[index][8] +
+                "\n10.Rent Days: " + arrListCustomer[index][9] +
+                "\n11.Type Service: " + arrListCustomer[index][10] +
+                "\n12.Back "
+            );
+            if(chooseInforEdit.toString() !== "12"){
+                editInformationCustomer(Number.parseInt(chooseInforEdit)-1);
+            }else{
+                checkEditCustomer = false;
+                displayCustomer();
+            }
+
+
+        } else {
+            alert("Information of customer:\n" +
+                "Name:" + arrListCustomer[index][0] +
+                "\nId Card:" + arrListCustomer[index][1] +
+                "\nBirthday:" + arrListCustomer[index][2] +
+                "\nEmail:" + arrListCustomer[index][3] +
+                "\nAddress:" + arrListCustomer[index][4] +
+                "\nType Customer:" + arrListCustomer[index][5] +
+                "\nDisscount:" + arrListCustomer[index][6] +
+                "\nAccompanying:" + arrListCustomer[index][7] +
+                "\nType Room:" + arrListCustomer[index][8] +
+                "\nRent Day:" + arrListCustomer[index][9] +
+                "\nType Service:" + arrListCustomer[index][10]
+            );
+            dislayMainManu();
+        }
+    }
+    
+    function chooseCustomerEdit() {
+        checkEditCustomer = true;
+        displayCustomer();
+    }
+    function editInformationCustomer() {
+        let editInfor = prompt("Enter Infor You Want Change:");
+        switch (index) {
+            case 0:
+                arrListCustomer[index][0] = editInfor;
+                break;
+            case 1:
+                arrListCustomer[index][1] = editInfor;
+                break;
+            case 2:
+                arrListCustomer[index][2] = editInfor;
+                break;
+            case 3:
+                arrListCustomer[index][3] = editInfor;
+                break;
+            case 4:
+                arrListCustomer[index][4] = editInfor;
+                break;
+            case 5:
+                arrListCustomer[index][5] = editInfor;
+                break;
+            case 6:
+                arrListCustomer[index][6] = editInfor;
+                break;
+            case 7:
+                arrListCustomer[index][7] = editInfor;
+                break;
+            case 8:
+                arrListCustomer[index][8] = editInfor;
+                break;
+            case 9:
+                arrListCustomer[index][9] = editInfor;
+                break;
+            case 10:
+                arrListCustomer[index][10] = editInfor;
+                break;
+            default:
+                alert("Fail !!!");
+                return;
+        }
+        checkEditCustomer = false;
+        dislayMainManu();
+    }
+    function chooseDeleteCustomer() {
+        checkDeleteCustomer = true;
+        displayCustomer();
+    }
+
+    function deleteCustomer(index) {
+        let chooseComfirm = prompt(
+            "Are you sure delete Customer: Name: "+arrListCustomer[index][0]+
+            "; Id Card: " + arrListCustomer[index][1]+
+            "\n1. Yes\2. No");
+        if(chooseComfirm==="1"){
+            arrListCustomer.splice(index,1);
+            arlert("Delete complete !!!");
+        }
+        checkDeleteCustomer = false;
+        dislayMainManu();
+    }
+
+    dislayMainManu();
+
+
+
+
+</script>
+
+</body>
+</html>
