@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let n = prompt("Enter a Number:");
+    let tong = 0;
+    let tich = 1;
+
+
+    for(let i = 0; i < n.length; i ++){
+        tong += parseInt(n.charAt(i));
+        tich = tich * parseInt(n.charAt(i));
+    }
+    alert("Tổng: " + tong + " Tích: " + tich )
+
+
+</script>
+
+</body>
+</html>

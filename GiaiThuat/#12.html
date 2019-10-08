@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let m = Number.parseInt(prompt("Số dòng:"));
+    let n = Number.parseInt(prompt("Số cột:"));
+    let num=0;
+    let arr= new Array();
+    for (let i=0;i< m; i++) {
+        arr[i]= new Array();
+        for (let j=0;j< n; j++){
+            num = Number.parseInt(prompt(i+" "+j));
+            arr[i].push(num);
+        }
+    }
+    // in matrix
+    for (let i=0;i<arr.length; i++) {
+        for (let j=0;j<arr[i].length; j++){
+            document.write(arr[i][j]+"  ");
+        }
+        document.write("<br/>");
+    }
+    document.write("<br/>");
+    // Tính tích các số là bội của 3 trên dòng đầu tiên
+    let kq=1;
+    let dem=0;
+    for (let j=0;j<arr[0].length; j++){
+        if (arr[0][j] %3 ===0){
+            kq = kq * arr[0][j];
+            dem++;
+        }
+    }
+    if (dem>0)
+        document.write("tích các số là bội của 3 trên dòng đầu tiên: "+ kq +" <br/>");
+    else document.write("Không có số nào chia hết cho 3 trên dòng thứ nhất: <br/>");
+    //c    Tạo ra mảng một chiều X[i] với X[i] là các giá trị lớn nhất trên dòng i của ma trận a
+    let arrMax= new Array();
+    let max=0;
+    for (let i=0;i<arr.length; i++) {
+        max = arr[i][0];
+        for (let j=0;j < arr[i].length -1; j++){
+            if (max < arr[i][j+1]){
+                max = arr[i][j+1]
+            }
+        }
+        arrMax.push(max);
+    }
+    //  In mảng arrMax
+    document.write("các giá trị lớn nhất trên các dòng của ma trận  <br/>");
+    for (let j=0;j<arrMax.length; j++){
+        document.write(arrMax[j]+ "  ");
+    }
+    //  Xóa Phần tử đầu tiên của arrMax
+    arrMax.splice(0,1);
+    document.write("In Lại mảng Max  <br/>");
+    for (let j=0;j<arrMax.length; j++){
+        document.write(arrMax[j]+ "  ");
+    }
+</script>
+</body>
+</html>

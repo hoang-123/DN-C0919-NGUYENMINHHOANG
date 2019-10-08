@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let str = prompt("Enter a string");
+    let dem = 1;
+    for(let i = 0; i < str.length; i++ ){
+        if(str.charAt(i) === " "){
+           str =  str.replace(" ", "<br>");
+           dem += 1;
+        }
+    }
+    document.write(str);
+    document.write("<br> số từ trong chuỗi là:" + dem);
+
+
+
+
+</script>
+</body>
+</html>

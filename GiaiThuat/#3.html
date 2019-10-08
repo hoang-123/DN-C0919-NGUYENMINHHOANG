@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let sum;
+    let check;
+    do{
+        let n = parseInt(prompt("Nhập vào số n:"));
+        check = true;
+        if(n!==0){
+            sum = 1;
+            for(let i=1; i<=n; i++){
+            sum += 1/i;
+            }
+            alert("Kết quả là " + sum);
+            check = true;
+        }
+        if(n===0) {
+            alert("nhap lai số n");
+        }
+    }while (!check);
+
+
+
+</script>
+</body>
+</html>

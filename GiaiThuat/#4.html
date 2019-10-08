@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let n = parseInt(prompt("Enter a Number"));
+    let sum = 15;
+
+
+    function giaiThua(x){
+        let result = 1;
+        for(let i = 2; i <= x; i++){
+            result = result * i;
+        }return result;
+    }
+    for (let i =1; i <= n; i++){
+        if(i%2 === 0){
+            sum += 1/giaiThua(i);
+        }
+        if(i%2 !== 0){
+            sum += -1/giaiThua(i);
+        }
+    }
+    alert("Kết quả là"+ sum);
+
+
+
+</script>
+</body>
+</html>

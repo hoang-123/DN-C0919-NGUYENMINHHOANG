@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let a = prompt("Nhạp vào số a:");
+    let b = prompt("Nhạp vào số b:");
+    let min;
+
+
+    for(let i = 1; i <= a*b; i++){
+        if(i%a === 0 && i%b ===0 ){
+            alert("BCNN là " + i);
+            break;
+        }
+    }
+    if(a<b){
+        min = a;
+    }else {
+        min = b;
+    }
+    for(let i=min; i>1; i--){
+        if(a%i===0 && b%i===0){
+            alert("UCLN là: " + i);
+        }
+    }
+
+</script>
+
+</body>
+</html>

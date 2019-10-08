@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let month = prompt("nhập vào 1 tháng:");
+    let year = parseInt(prompt("nhập vào 1 năm:"));
+    let isLeapYear = false;
+
+    if (year % 4 === 0) {
+        if (year % 100 === 0) {
+            if (year % 400 === 0) {
+                isLeapYear = true;
+            }
+        } else {
+            isLeapYear = true;
+        }
+    }
+    switch (month) {
+        case "2":
+            if(isLeapYear)
+            alert("Tháng " + month + " của năm " + year +" có 29 ngày");
+            else alert("Tháng " + month + " của năm " + year +" có 28 ngày");
+            break;
+        case "1":
+        case "3":
+        case "5":
+        case "7":
+        case "8":
+        case "10":
+        case "12":
+            alert("Tháng " + month + " của năm " + year +" có 31 ngày");
+            break;
+        case "4":
+        case "6":
+        case "9":
+        case "11":
+            alert("Tháng " + month + " của năm " + year +" có 30 ngày");
+            break;
+        default:
+            alert("Đây ko phải là 1 tháng của năm");
+            break;
+    }
+
+
+</script>
+
+</body>
+</html>
